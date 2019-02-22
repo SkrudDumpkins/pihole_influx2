@@ -10,14 +10,14 @@ import requests
 import time
 from influxdb import InfluxDBClient
 
-HOSTNAME = "ns-01" # Pi-hole hostname to report in InfluxDB for each measurement
-PIHOLE_API = "http://PI_HOLE_IP_ADDRESS_HERE/admin/api.php"
-INFLUXDB_SERVER = "127.0.0.1" # IP or hostname to InfluxDB server
+HOSTNAME = "piholestats" # Pi-hole hostname to report in InfluxDB for each measurement
+PIHOLE_API = "http://192.168.1.7/admin/api.php"
+INFLUXDB_SERVER = "192.168.1.15" # IP or hostname to InfluxDB server
 INFLUXDB_PORT = 8086 # Port on InfluxDB server
-INFLUXDB_USERNAME = "username"
-INFLUXDB_PASSWORD = "password"
+INFLUXDB_USERNAME = "piholestats"
+INFLUXDB_PASSWORD = "D1g1c0r3"
 INFLUXDB_DATABASE = "piholestats"
-DELAY = 600 # seconds
+DELAY = 15 # seconds
 
 def send_msg(domains_being_blocked, dns_queries_today, ads_percentage_today, ads_blocked_today):
 
